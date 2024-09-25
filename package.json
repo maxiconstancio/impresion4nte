@@ -1,0 +1,19 @@
+{
+  "name": "impresion4nte",
+  "version": "1.0.0",
+  "description": "Para desarrollar un sistema de control de pedidos de impresiones 3D con funcionalidades de gestión de stock, pendientes, cálculo de precios, presupuestos, compras y ventas, es fundamental tener una planificación clara y bien estructurada. Aquí te dejo una propuesta de planificación:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pg": "^8.13.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.3"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.6.2"
+  }
+}
