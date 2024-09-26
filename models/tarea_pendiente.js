@@ -1,4 +1,4 @@
-// models/tarea_pendiente.js
+'use strict';
 module.exports = (sequelize, DataTypes) => {
   const TareaPendiente = sequelize.define('TareaPendiente', {
     descripcion: {
@@ -8,12 +8,17 @@ module.exports = (sequelize, DataTypes) => {
     estado: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    pedido_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     }
   }, {});
-  
   TareaPendiente.associate = function(models) {
-    TareaPendiente.belongsTo(models.Pedido, { foreignKey: 'pedido_id' });
+    TareaPendiente.belongsTo(models.Pedido, {
+      foreignKey: 'pedido_id',
+      onDelete: 'CASCADE'
+    });
   };
-  
   return TareaPendiente;
 };

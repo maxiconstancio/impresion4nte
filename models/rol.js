@@ -1,4 +1,4 @@
-// models/rol.js
+'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Rol = sequelize.define('Rol', {
     nombre: {
@@ -6,10 +6,11 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     }
   }, {});
-  
   Rol.associate = function(models) {
-    Rol.belongsToMany(models.Usuario, { through: 'Usuario_Rol' });
+    Rol.belongsToMany(models.Usuario, {
+      through: 'Usuario_Rol',
+      foreignKey: 'rol_id'
+    });
   };
-  
   return Rol;
 };
